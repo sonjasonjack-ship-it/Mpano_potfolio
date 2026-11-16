@@ -1,29 +1,26 @@
-<script>
-import bravo from "@/public/bravo.png"
-</script>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// 1. Hero Slideshow hamwe n'amafoto y'imishinga
+// 1. Hero Slideshow with Project Images
 const heroSlides = ref([
   {
     badge: 'L4 SOFTWARE DEVELOPMENT • COLLÈGE DE BETHEL',
     title: 'MPANO Jabo Jackson',
-    subtitle: 'Full-Stack Web Developer & Systems Enthusiast. Nkubaka imbuga zifite amashusho meza, zihuta, kandi zikorana n’ikoranabuhanga rigezweho.',
+    subtitle: 'Full-Stack Web Developer & Systems Enthusiast. Building sleek, high-performance, and modern digital web experiences.',
     highlight: 'Engineering the Digital Future',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'
   },
   {
     badge: 'FRONTEND & UI/UX DESIGN',
     title: 'Modern, Responsive & Animated Interfaces',
-    subtitle: 'Gushushanya imbuga zifite amashusho meza, animations zidasanzwe, na responsive design ikora kuri buri mudasobwa na telefone.',
+    subtitle: 'Crafting stunning visual layouts, smooth custom animations, and mobile-first responsive designs for any screen.',
     highlight: 'Vue 3 • CSS3 • Visual UI/UX',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'
   },
   {
     badge: 'BACKEND, DATABASES & NETWORKING',
     title: 'Robust Systems & Database Architecture',
-    subtitle: 'Gucunga za Server, Node.js, PHP, MySQL, hamwe na Windows Server Active Directory ku bigo by’amashuri.',
+    subtitle: 'Managing server environments, Node.js, PHP, MySQL databases, and Windows Server Active Directory setups for institutions.',
     highlight: 'Node.js • PHP • MySQL • Windows Server',
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80'
   }
@@ -31,29 +28,29 @@ const heroSlides = ref([
 
 const currentHeroSlide = ref(0);
 
-// 2. Imishinga irimo amafoto
+// 2. Featured Projects with Images
 const projects = ref([
   {
     number: '01',
     category: 'School Management System',
     title: 'ASPADE Ngororero School Portal',
-    description: 'Sisitemu icunga ibigo by’amashuri irimo kwandika abanyeshuri online, Admin Dashboard yo kugenzura ubusabe, guhitamo intara n’uturere (georwanda), no kohereza ubutumwa bugufi (SMS).',
+    description: 'A comprehensive school administration platform featuring online student registration, an Admin Dashboard for reviewing submissions, region/district filtering (georwanda), and SMS integration.',
     tech: ['Vue 3', 'Node.js', 'Express.js', 'MySQL', 'SMS API'],
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80'
+    image: '/aspade.png'
   },
   {
     number: '02',
     category: 'Entertainment & Streaming',
     title: 'Bravo.net Streaming Platform',
-    description: 'Urubuga rwa filime na series (bravo.net) rukoresha TMDB API, rufite Dark Mode nziza, gushakisha byihuse, na animations zigezweho.',
+    description: 'A movie and series streaming application (bravo.net) powered by the TMDB API, featuring sleek Dark Mode, lightning-fast media search, and modern UI animations.',
     tech: ['Vue 3', 'Vite', 'TMDB API', 'Vue Router'],
-    image: 'bravo'
+    image: '/bravo.png'
   },
   {
     number: '03',
     category: 'Systems & Infrastructure',
     title: 'Offline LAN & Active Directory Lab',
-    description: 'Gutunganya imiyoboro ya mudasobwa nta interineti ihari, gushyiraho Windows Server Active Directory Domains, no gukoresha Kali Linux.',
+    description: 'Configuring offline computer networks, setting up Windows Server Active Directory Domains, and practicing network security protocols with Kali Linux.',
     tech: ['Windows Server', 'Active Directory', 'PHP', 'Kali Linux'],
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80'
   },
@@ -61,7 +58,7 @@ const projects = ref([
     number: '04',
     category: 'School Communication',
     title: 'Classroom Intercom Web System',
-    description: 'Igishushanyo cya porogaramu ifasha umuyobozi ushinzwe amasomo (DOS) guhamagara abanyeshuri mu mashuri yabo akoresheje mikoro yo ku biro.',
+    description: 'A conceptual web application designed for a Director of Studies (DOS) to broadcast announcements or call students directly from an office microphone.',
     tech: ['UI/UX Design', 'Web Audio API', 'Vue.js'],
     image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80'
   }
@@ -69,21 +66,21 @@ const projects = ref([
 
 const currentProject = ref(0);
 
-// 3. Ubumenyi
+// 3. Technical Skills
 const skills = ref([
   {
     title: 'Frontend Engineering',
-    desc: 'Kubaka imbuga zifite isura nziza n’umuvuduko wo hejuru.',
+    desc: 'Building visually appealing and lightning-fast web interfaces.',
     list: ['Vue.js 3 (Composition API)', 'HTML5 & Advanced CSS3', 'Keyframe Animations & Transitions', 'Responsive Mobile-First Design']
   },
   {
     title: 'Backend & Databases',
-    desc: 'Gukora za Server, APIs, na MySQL databases.',
+    desc: 'Developing scalable servers, APIs, and relational MySQL databases.',
     list: ['Node.js & Express.js', 'PHP Programming', 'MySQL Relational Databases', 'ERD Database Design (Lucidchart)']
   },
   {
     title: 'Systems & Tools',
-    desc: 'Gucunga operating systems na tools za developers.',
+    desc: 'Operating system administration and professional developer toolsets.',
     list: ['Windows Server (Active Directory)', 'Linux Terminal & Kali', 'Git, GitHub & Vercel Deployment', 'Number Base Systems (Octal/Binary)']
   }
 ]);
@@ -93,29 +90,19 @@ const services = ref([
   {
     icon: '⚡',
     title: 'Full-Stack Web Development',
-    detail: 'Kubaka imbuga zikora kuva hasi kugeza hejuru zihujwe na database ya MySQL.'
+    detail: 'Building end-to-end web applications seamlessly connected to robust MySQL databases.'
   },
   {
     icon: '🎨',
     title: 'Modern UI & Animations',
-    detail: 'Gushushanya amabara, typography, na CSS animations zikurura abantu.'
+    detail: 'Designing engaging color palettes, typography, and immersive CSS animations.'
   },
   {
     icon: '🗄️',
     title: 'Database & Server Setup',
-    detail: 'Gutegura ERD diagrams, Windows Server, na za local LAN environments.'
+    detail: 'Architecting ERD diagrams, Windows Server environments, and local LAN networks.'
   }
 ]);
-
-// Download Real PDF CV Function
-const downloadCV = () => {
-  const link = document.createElement('a');
-  link.href = '.\public\MPANO Jabo Jackson _cv.pdf'; // Hitamo ko iyi PDF iri muri public folder ya project yawe
-  link.download = 'MPANO Jabo Jackson _cv.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
 
 let heroTimer = null;
 let projectTimer = null;
@@ -180,10 +167,9 @@ onUnmounted(() => {
               <p class="hero-desc">{{ heroSlides[currentHeroSlide].subtitle }}</p>
               
               <div class="hero-actions">
-                
-                <a href="../public/MPANO Jabo Jackson _cv.pdf" download="MPANO_Jabo_Jackson_CV.pdf" class="btn-outline cv-btn">
-  <span>📄</span> Download CV (PDF)
-</a>
+                <a href="/MPANO Jabo Jackson _cv.pdf" download="MPANO_Jabo_Jackson_CV.pdf" class="btn-outline cv-btn">
+                  <span>📄</span> Download CV (PDF)
+                </a>
               </div>
             </div>
 
@@ -241,12 +227,12 @@ onUnmounted(() => {
 
         <div class="about-grid">
           <div class="about-text-card">
-            <h3>Hello! I am <span class="text-emerald">MPANO Jabo Jackson</span>[cite: 2]</h3>
+            <h3>Hello! I am <span class="text-emerald">MPANO Jabo Jackson</span></h3>
             <p>
-              Ndi umunyeshuri wiga mu mwaka wa kane mu ishami rya <strong>Software Development (L4 SOD)</strong> kuri <strong>Collège de Bethel</strong>, nyuma yo gusoza icyiciro cya mbere kuri <strong>GS RUHANGO ADEPR</strong>[cite: 2].
+              I am a Level 4 student majoring in <strong>Software Development (L4 SOD)</strong> at <strong>Collège de Bethel</strong>, following the completion of my O-Level studies at <strong>GS RUHANGO ADEPR</strong>.
             </p>
             <p>
-              Mfite ishyaka mu kubaka imbuga zifite isura nziza, imikorere yihuse, hamwe na porogaramu zikora mu buryo bwa Offline-first[cite: 2].
+              I am deeply passionate about building aesthetically pleasing, high-speed web platforms and offline-first software solutions.
             </p>
             <div class="terminal-box">
               <div class="term-header">
@@ -286,19 +272,19 @@ $ cat skills.txt
         <div class="edu-grid">
           <div class="edu-card active-edu">
             <div class="edu-badge">CURRENT • LEVEL 4 SOD</div>
-            <h3>Collège de Bethel[cite: 2]</h3>
-            <p class="edu-program">Software Development (L4 SOD)[cite: 2]</p>
+            <h3>Collège de Bethel</h3>
+            <p class="edu-program">Software Development (L4 SOD)</p>
             <p class="edu-details">
-              Kwiga kubaka imbuga (Frontend & Backend), gucunga database za MySQL na ERDs, gushyiraho Windows Server Active Directory, hamwe na Linux[cite: 2].
+              Specializing in frontend and backend web development, relational database modeling with MySQL and ERDs, Windows Server Active Directory, and Linux environments.
             </p>
           </div>
 
           <div class="edu-card">
             <div class="edu-badge gold-badge">FOUNDATION EDUCATION</div>
-            <h3>GS RUHANGO ADEPR[cite: 2]</h3>
-            <p class="edu-program">O-Level General Education[cite: 2]</p>
+            <h3>GS RUHANGO ADEPR</h3>
+            <p class="edu-program">O-Level General Education</p>
             <p class="edu-details">
-              Aho natangiriye urugendo rwanjye rw'amashuri yisumbuye nka foundation ikomeye mu bumenyi n'ikoranabuhanga[cite: 2].
+              The foundational stepping stone of my academic journey where I built my core discipline and passion for sciences and technology.
             </p>
           </div>
         </div>
@@ -591,21 +577,6 @@ body {
   gap: 18px;
   align-items: center;
 }
-
-.btn-emerald {
-  background: var(--emerald);
-  color: #052E16;
-  padding: 16px 34px;
-  border-radius: 10px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-emerald:hover { background: #34D399; transform: translateY(-3px); }
 
 .btn-outline {
   background: transparent;
